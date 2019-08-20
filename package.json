@@ -1,0 +1,27 @@
+{
+  "name": "algorithm-problems",
+  "version": "1.0.0",
+  "description": "Algorithm problems and solutions",
+  "main": "",
+  "author": "babangsund",
+  "license": "MIT",
+  "homepage": "https://github.com/babangsund/algorithm-problems#readme",
+  "keywords": [
+    "algorithm",
+    "problems",
+    "javascript"
+  ],
+  "bugs": {
+    "url": "https://github.com/babangsund/algorithm-problems/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/babangsund/algorithm-problems.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "prettier": "^1.18.2"
+  }
+}
