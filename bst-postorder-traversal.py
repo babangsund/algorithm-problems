@@ -11,3 +11,6 @@ def rec(root):
         return ""
 
     return " ".join([str(s) for s in [rec(root.left), rec(root.right), root.info] if s])
+
+
+# Runtime: O(n), where n is the number of nodes in the tree.
