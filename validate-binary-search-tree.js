@@ -1,6 +1,5 @@
 // https://leetcode.com/problems/validate-binary-search-tree
 
-// DFS traversal, O(n) runtime, O(h) space
 function isValidBST(root, min = null, max = null) {
   if (!root) {
     return true;
@@ -15,3 +14,5 @@ function isValidBST(root, min = null, max = null) {
     isValidBST(root.right, root.val, max)
   );
 }
+
+// Runtime: O(n + e) (nodes + edges)
