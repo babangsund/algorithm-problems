@@ -13,4 +13,4 @@ function CompareLists(llist1, llist2) {
   return 0;
 }
 
-// Runtime: O(n)
+// Runtime: O(a + b)
