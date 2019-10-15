@@ -13,3 +13,5 @@ function insertNodeAtTail(head, data) {
   next.next = tail;
   return head;
 }
+
+// Runtime: O(n)

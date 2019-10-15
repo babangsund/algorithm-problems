@@ -5,3 +5,5 @@ function insertNodeAtHead(head, data) {
   node.next = head;
   return node;
 }
+
+// Runtime: O(n)
