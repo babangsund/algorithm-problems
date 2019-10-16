@@ -20,20 +20,14 @@ function findMergeNode(headA, headB) {
 // Space: Constant
 
 // Solution #2
-function llToMap(head) {
-  const map = new Map();
-  let next = head;
-
-  while (next) {
-    map.set(next, next);
-    next = next.next;
-  }
-
-  return map;
-}
-
 function findMergeNode(headA, headB) {
-  const mapA = llToMap(headA);
+  const mapA = new Map();
+  let nextA = headA;
+
+  while (nextA) {
+    map.set(nextA, nextA);
+    nextA = nextA.next;
+  }
 
   let nextB = headB;
   while (nextB) {
