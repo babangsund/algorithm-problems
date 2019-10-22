@@ -3,7 +3,7 @@
 function reverseString(s) {
   let p1 = 0;
   let p2 = s.length - 1;
-  for (let i = 0; i < s.length / 2; i++) {
+  while (p1 <= p2) {
     const v1 = s[p1];
     const v2 = s[p2];
 
