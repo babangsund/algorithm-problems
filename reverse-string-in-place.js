@@ -15,7 +15,7 @@ function reverseString(s) {
   }
 }
 
-// Runtime: O(log s)
+// Runtime: O(s)
 // Space: O(1)
 
 // Naive solution:
