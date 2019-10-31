@@ -55,3 +55,26 @@ function lengthOfLongestSubstring(s) {
 
 // Runtime: O(n^3)
 // Space: O(s + c), s = set, c = cache; size of set is bound by size of alphabet (O(min(s, a) + c))?
+
+/* Solution #2 */
+function lengthOfLongestSubstring(s) {
+  if (!s) {
+    return 0;
+  }
+
+  const map = new Map();
+  let max = 1;
+
+  for (let i = 0, j = 0; j < s.length; j++) {
+    if (map.has(s[j])) {
+      i = Math.max(map.get(s[j]), i);
+    }
+    max = Math.max(max, j - i + 1);
+    map.set(s[j], j + 1);
+  }
+
+  return max;
+}
+
+// Runtime: O(n)
+// Space: O(m), m = map bound by alphabet length
