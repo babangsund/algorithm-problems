@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/longest-palindromic-substring/
 
+/* Solution #1 */
+
 function getPalindrome(s, i, max) {
   let end = i;
   let start = i;
@@ -35,6 +37,60 @@ function longestPalindrome(s) {
   }
 
   return longest;
+}
+
+// Runtime: O(n^2)
+// Space: O(k), k = longest
+
+/* Solution #2 */
+
+class LongestPalindrome {
+  constructor(string) {
+    this.longest = string[0];
+    this.string = string;
+    this.max = 1;
+
+    this.findLongest();
+  }
+
+  findLongest() {
+    for (let i = 0; i < this.string.length; i++) {
+      const [max, longest] = this.findPalindrome(i);
+      if (max > this.max) {
+        this.max = max;
+        this.longest = longest;
+      }
+    }
+  }
+
+  findPalindrome(i) {
+    const {max, string} = this;
+    let nextMax = 1;
+    let right = i;
+    let left = i;
+
+    // Move right until they're no longer equal
+    while (right < string.length && string[right] === string[right + 1]) {
+      nextMax++;
+      right++;
+    }
+
+    while (
+      left > -1 &&
+      right < string.length &&
+      string[left] === string[right]
+    ) {
+      nextMax += 2;
+      right++;
+      left--;
+    }
+
+    return nextMax > max ? [nextMax, string.slice(left + 1, right)] : [];
+  }
+}
+
+function longestPalindrome(s) {
+  return !s ? '' : new LongestPalindrome(s).longest;
 }
 
 // Runtime: O(n^2)
